@@ -14,21 +14,21 @@
 
 char	*ft_strchr(const char *s1, int s2)
 {
-	int		i;
-	const char	*test = s1;
+	int			i;
+	const char	*str;
 
 	i = 0;
-	while (test[i])
+	str = s1;
+	while (str[i])
 	{
-		if (test[i] == (char)s2)
-			return ((char *)&test[i]);
+		if (str[i] == (char)s2)
+			return ((char *)&str[i]);
 		i++;
 	}
 	if (s2 == 0)
-		return ((char *)&test[i]);
+		return ((char *)&str[i]);
 	return (NULL);
 }
-
 
 /*
 #include <stdio.h>
