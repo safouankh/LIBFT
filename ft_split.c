@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsplit.c                                      :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sael-kha <sael-kha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 21:52:23 by sael-kha          #+#    #+#             */
-/*   Updated: 2024/10/21 21:52:23 by sael-kha         ###   ########.fr       */
+/*   Updated: 2024/10/25 16:11:31 by sael-kha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,8 +68,6 @@ char	**ft_strsplit(char const *s, char c)
 	i = 0;
 	j = 0;
 	strsplit = (char **)malloc((count(s, c) + 1) * sizeof(char *));
-	if (strsplit == NULL)
-		return (NULL);
 	while (s[i])
 	{
 		len = 0;
@@ -77,8 +75,6 @@ char	**ft_strsplit(char const *s, char c)
 		{
 			len = ft_strlen(s + i, c);
 			strsplit[j] = (char *)malloc(sizeof(char) * (len + 1));
-			if (strsplit[j] == NULL)
-				return (NULL);
 			strsplit[j] = ft_strncpy(strsplit[j], s + i, c);
 			i += len;
 			j++;
