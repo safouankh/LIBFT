@@ -30,7 +30,8 @@ SRC = ft_atoi.c \
       ft_tolower.c \
       ft_toupper.c \
 	ft_strlcat.c \
-      ft_strdup.c
+      ft_strdup.c \
+      ft_striteri.c
 CC = gcc
 NAME = libft.a
 CFLAGS = -Wall -Wextra -Werror
