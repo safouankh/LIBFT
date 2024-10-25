@@ -19,18 +19,12 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*substr;
 
 	if (s == NULL)
-	{
 		return (NULL);
-	}
 	if (start >= (unsigned int)ft_strlen(s))
-	{
 		return (NULL);
-	}
 	substr = (char *)malloc(sizeof(char) * (len + 1));
 	if (substr == NULL)
-	{
 		return (NULL);
-	}
 	i = 0;
 	while (s[start + i] != '\0' && i < len)
 	{

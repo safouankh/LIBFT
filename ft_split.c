@@ -58,7 +58,7 @@ int	count(char const *s, char sep)
 	return (j);
 }
 
-char	**ft_strsplit(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	int		i;
 	int		j;
@@ -79,7 +79,8 @@ char	**ft_strsplit(char const *s, char c)
 			i += len;
 			j++;
 		}
-		i++;
+		else
+			i++;
 	}
 	strsplit[j] = NULL;
 	return (strsplit);

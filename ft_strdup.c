@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static char	*ft_strdup(char const *s)
+char	*ft_strdup(char const *s)
 {
 	char	*dup;
 	int		i;
@@ -25,7 +25,10 @@ static char	*ft_strdup(char const *s)
 		return (NULL);
 	i = 0;
 	while (s[i])
-		dup[i++] = s[i];
+	{
+		dup[i] = s[i];
+		i++;
+	}
 	dup[i] = '\0';
 	return (dup);
 }

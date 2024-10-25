@@ -29,7 +29,8 @@ SRC = ft_atoi.c \
       ft_strtrim.c \
       ft_tolower.c \
       ft_toupper.c \
-	  ft_strlcat.c
+	ft_strlcat.c \
+      ft_strdup.c
 CC = gcc
 NAME = libft.a
 CFLAGS = -Wall -Wextra -Werror
