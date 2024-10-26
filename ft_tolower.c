@@ -18,18 +18,3 @@ int	ft_tolower(int ch)
 	}
 	return (ch);
 }
-
-/*
-#include <stdio.h>
- 
-int main()
-{
-    char ch;
- 
-    ch = 'G';
-    printf("%c in uppercase is represented as  %c",
-           ch, toupper(ch));
- 
-    return 0;
-}
-*/

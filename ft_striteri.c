@@ -1,11 +1,17 @@
-/*
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sael-kha <sael-kha@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/26 10:50:15 by sael-kha          #+#    #+#             */
+/*   Updated: 2024/10/26 10:50:15 by sael-kha         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void print_char_with_index(unsigned int index, char *c)
-{
-    printf("Index %u: %c\n", index, *c);
-}
-*/
+#include "libft.h"
+
 void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
 	int	i;
@@ -17,13 +23,3 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 		i++;
 	}
 }
-
-/*
-int main() {
-    char str[] = "hello";
-
-    ft_striteri(str, print_char_with_index);
-
-    return 0;
-}
-*/

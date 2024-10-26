@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 size_t	ft_strlen(const char *s)
 {
@@ -23,8 +23,3 @@ size_t	ft_strlen(const char *s)
 	}
 	return (i);
 }
-/*#include <stdio.h>
-int main()
-{
-    printf("%d", ft_strlen("safouan"));
-}*/
