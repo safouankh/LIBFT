@@ -19,6 +19,8 @@ void	*ft_memcpy(void *to, const void *from, size_t n)
 
 	str_to = (char *)to;
 	str_from = (const char *)from;
+	if(to == from)
+		return (to);
 	if (!str_to || !str_from)
 		return (NULL);
 	while (n--)
