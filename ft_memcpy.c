@@ -14,12 +14,12 @@
 
 void	*ft_memcpy(void *to, const void *from, size_t n)
 {
-	char		*str_to;
-	const char	*str_from;
+	unsigned char	*str_to;
+	unsigned char	*str_from;
 
-	str_to = (char *)to;
-	str_from = (const char *)from;
-	if(to == from)
+	str_to = (unsigned char *)to;
+	str_from = (unsigned char *)from;
+	if (to == from)
 		return (to);
 	if (!str_to || !str_from)
 		return (NULL);
