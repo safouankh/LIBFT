@@ -6,7 +6,7 @@
 /*   By: sael-kha <sael-kha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 11:38:16 by sael-kha          #+#    #+#             */
-/*   Updated: 2024/10/27 19:44:54 by sael-kha         ###   ########.fr       */
+/*   Updated: 2024/10/28 13:49:25 by sael-kha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	is_on_set(const char s, const char *set)
 	return (0);
 }
 
-static char	*handle_trim(int start, int end, char const *s1)
+char	*handle_trim(int start, int end, char const *s1)
 {
 	char	*str;
 	int		len;

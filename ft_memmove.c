@@ -29,6 +29,7 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 			str_to[n] = str_from[n];
 	return (dst);
 }
+
 /*
 #include <stdio.h>
 #include <string.h>

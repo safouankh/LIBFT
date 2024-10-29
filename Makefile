@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: sael-kha <sael-kha@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/10/28 11:31:26 by sael-kha          #+#    #+#              #
+#    Updated: 2024/10/29 15:02:34 by sael-kha         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 SRC = ft_atoi.c \
       ft_bzero.c \
       ft_calloc.c \
@@ -32,7 +44,7 @@ SRC = ft_atoi.c \
 	ft_strlcat.c \
       ft_strdup.c \
       ft_striteri.c
-CC = gcc
+CC = cc
 NAME = libft.a
 CFLAGS = -Wall -Wextra -Werror
 OBJ = $(SRC:.c=.o)
@@ -40,12 +52,7 @@ OBJ = $(SRC:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJ)
-## ar : kat3ni milefat .o tjm3om ou thotom f libft.a
-## rc : r kat3ni replace ida kanet libft.a fija kayna
-##   ou c kat3ni create ida makanetch libft.a dija kayna
-	ar rc $(NAME) $(OBJ)
-	ranlib $(NAME)
-## ranlib : mouhima bach trteb libft.a ou 
+	ar rcs $(NAME) $(OBJ)
 clean:
 	@rm -f *.o
 

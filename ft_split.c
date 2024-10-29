@@ -45,16 +45,15 @@ int	count(char const *s, char sep)
 
 	i = 0;
 	j = 0;
-	while (s[i] != '\0')
+	while (s[i])
 	{
-		if (s[i - 1] != sep && (i - 1) >= 0 && s[i] == sep)
-		{
+		while (s[i] && s[i] == sep)
+			i++;
+		if (s[i])
 			j++;
-		}
-		i++;
+		while (s[i] && s[i] != sep)
+			i++;
 	}
-	if (s[i] == '\0' && s[i - 1] != sep)
-		j++;
 	return (j);
 }
 
