@@ -6,7 +6,7 @@
 #    By: sael-kha <sael-kha@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/28 11:31:26 by sael-kha          #+#    #+#              #
-#    Updated: 2024/10/29 15:02:34 by sael-kha         ###   ########.fr        #
+#    Updated: 2024/10/30 16:17:35 by sael-kha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,7 +43,8 @@ SRC = ft_atoi.c \
       ft_toupper.c \
 	ft_strlcat.c \
       ft_strdup.c \
-      ft_striteri.c
+      ft_striteri.c \
+      split_helper.c
 CC = cc
 NAME = libft.a
 CFLAGS = -Wall -Wextra -Werror

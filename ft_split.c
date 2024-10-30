@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-int	ft_strlen(const char *str, char sep)
+int	gta_strlen(const char *str, char sep)
 {
 	int	i;
 
@@ -38,25 +38,6 @@ char	*ft_strncpy(char *dest, const char *src, char sep)
 	return (dest);
 }
 
-int	count(char const *s, char sep)
-{
-	int	i;
-	int	j;
-
-	i = 0;
-	j = 0;
-	while (s[i])
-	{
-		while (s[i] && s[i] == sep)
-			i++;
-		if (s[i])
-			j++;
-		while (s[i] && s[i] != sep)
-			i++;
-	}
-	return (j);
-}
-
 char	**ft_split(char const *s, char c)
 {
 	int		i;
@@ -66,18 +47,14 @@ char	**ft_split(char const *s, char c)
 
 	i = 0;
 	j = 0;
-	strsplit = (char **)malloc((count(s, c) + 1) * sizeof(char *));
-	if (!strsplit)
-		return (NULL);
+	strsplit = split_shit(s, c);
 	while (s[i])
 	{
 		len = 0;
 		if (s[i] != c)
 		{
-			len = ft_strlen(s + i, c);
-			strsplit[j] = (char *)malloc(sizeof(char) * (len + 1));
-			if (!strsplit)
-				return (NULL);
+			len = gta_strlen(s + i, c);
+			strsplit[j] = shit(len);
 			strsplit[j] = ft_strncpy(strsplit[j], s + i, c);
 			i += len;
 			j++;
