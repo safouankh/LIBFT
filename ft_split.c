@@ -67,6 +67,8 @@ char	**ft_split(char const *s, char c)
 	i = 0;
 	j = 0;
 	strsplit = (char **)malloc((count(s, c) + 1) * sizeof(char *));
+	if (!strsplit)
+		return (NULL);
 	while (s[i])
 	{
 		len = 0;
@@ -74,6 +76,8 @@ char	**ft_split(char const *s, char c)
 		{
 			len = ft_strlen(s + i, c);
 			strsplit[j] = (char *)malloc(sizeof(char) * (len + 1));
+			if (!strsplit)
+				return (NULL);
 			strsplit[j] = ft_strncpy(strsplit[j], s + i, c);
 			i += len;
 			j++;
