@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	gta_strlen(const char *str, char sep)
+static int	gta_strlen(const char *str, char sep)
 {
 	int	i;
 
@@ -24,7 +24,7 @@ int	gta_strlen(const char *str, char sep)
 	return (i);
 }
 
-char	*ft_strncpy(char *dest, const char *src, char sep)
+static char	*ft_strncpy(char *dest, const char *src, char sep)
 {
 	int	i;
 
