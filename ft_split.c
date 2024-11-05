@@ -17,6 +17,8 @@ static int	gta_strlen(const char *str, char sep)
 	int	i;
 
 	i = 0;
+	if (!str)
+		return (0);
 	while (str[i] != '\0' && str[i] != sep)
 	{
 		i++;
@@ -29,6 +31,8 @@ static char	*ft_strncpy(char *dest, const char *src, char sep)
 	int	i;
 
 	i = 0;
+	if (!dest || !src)
+		return (NULL);
 	while (src[i] != '\0' && src[i] != sep)
 	{
 		dest[i] = src[i];
@@ -38,30 +42,79 @@ static char	*ft_strncpy(char *dest, const char *src, char sep)
 	return (dest);
 }
 
+static char	**process_word(const char *s, char c, char **strsplit, int *j)
+{
+	int	len;
+
+	len = gta_strlen(s, c);
+	strsplit[*j] = shit(len);
+	if (!ft_strncpy(strsplit[*j], s, c))
+	{
+		while (--(*j) >= 0)
+			free(strsplit[*j]);
+		free(strsplit);
+		return (NULL);
+	}
+	(*j)++;
+	return (strsplit);
+}
+
 char	**ft_split(char const *s, char c)
 {
-	int		i;
 	int		j;
-	int		len;
 	char	**strsplit;
 
-	i = 0;
 	j = 0;
 	strsplit = split_shit(s, c);
-	while (s[i])
+	if (!strsplit)
+		return (NULL);
+	while (*s)
 	{
-		len = 0;
-		if (s[i] != c)
+		if (*s != c)
 		{
-			len = gta_strlen(s + i, c);
-			strsplit[j] = shit(len);
-			strsplit[j] = ft_strncpy(strsplit[j], s + i, c);
-			i += len;
-			j++;
+			strsplit = process_word(s, c, strsplit, &j);
+			if (!strsplit)
+				return (NULL);
+			s += gta_strlen(s, c);
 		}
 		else
-			i++;
+			s++;
 	}
 	strsplit[j] = NULL;
 	return (strsplit);
 }
+/*
+char    ft_split(char const *s, char c)
+{
+    int        j;
+    int        len;
+    char    strsplit;
+
+    j = 0;
+    strsplit = split_shit(s, c);
+    if (!strsplit)
+        return NULL;
+    while (s)
+    {
+        len = 0;
+        if (s != c)
+        {
+            len = gta_strlen(s, c);
+            strsplit[j] = shit(len);
+            if (!ft_strncpy(strsplit[j], s, c))
+            {
+                while (--j >= 0)
+                    free(strsplit[j]);
+                free(strsplit);
+                return (NULL);
+            }
+            s += len;
+            j++;
+        }
+        else
+            s++;
+    }
+    strsplit[j] = NULL;
+    return (strsplit);
+}
+*/

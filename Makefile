@@ -6,7 +6,7 @@
 #    By: sael-kha <sael-kha@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/28 11:31:26 by sael-kha          #+#    #+#              #
-#    Updated: 2024/10/30 19:39:43 by sael-kha         ###   ########.fr        #
+#    Updated: 2024/11/02 11:52:05 by sael-kha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -56,8 +56,6 @@ $(NAME): $(OBJ)
 	ar rcs $(NAME) $(OBJ)
 clean:
 	@rm -f *.o
-
 fclean: clean
 	@rm -f *.a
-
 re: fclean all
