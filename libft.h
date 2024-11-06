@@ -51,8 +51,8 @@ void	ft_bzero(void *s, size_t n);
 int		ft_atoi(const char *str);
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 void	ft_putendl_fd(char *s, int fd);
-char	**split_shit(char const *s, char c);
-char	*shit(int len);
+char	**ar_str(char const *s, char c);
+char	*alloc_str(int len);
 int		count(char const *s, char sep);
 
 #endif

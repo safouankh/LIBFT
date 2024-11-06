@@ -47,7 +47,7 @@ static char	**process_word(const char *s, char c, char **strsplit, int *j)
 	int	len;
 
 	len = gta_strlen(s, c);
-	strsplit[*j] = shit(len);
+	strsplit[*j] = alloc_str(len);
 	if (!ft_strncpy(strsplit[*j], s, c))
 	{
 		while (--(*j) >= 0)
@@ -65,7 +65,7 @@ char	**ft_split(char const *s, char c)
 	char	**strsplit;
 
 	j = 0;
-	strsplit = split_shit(s, c);
+	strsplit = ar_str(s, c);
 	if (!strsplit)
 		return (NULL);
 	while (*s)

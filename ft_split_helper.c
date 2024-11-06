@@ -6,7 +6,7 @@
 /*   By: sael-kha <sael-kha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 16:11:27 by sael-kha          #+#    #+#             */
-/*   Updated: 2024/10/31 12:00:50 by sael-kha         ###   ########.fr       */
+/*   Updated: 2024/11/06 10:48:04 by sael-kha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	count(char const *s, char sep)
 	return (j);
 }
 
-char	**split_shit(char const *s, char c)
+char	**ar_str(char const *s, char c)
 {
 	char	**shit;
 
@@ -41,7 +41,7 @@ char	**split_shit(char const *s, char c)
 	return (shit);
 }
 
-char	*shit(int len)
+char	*alloc_str(int len)
 {
 	char	*split;
 
