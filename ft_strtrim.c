@@ -6,7 +6,7 @@
 /*   By: sael-kha <sael-kha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 11:38:16 by sael-kha          #+#    #+#             */
-/*   Updated: 2024/10/31 19:29:52 by sael-kha         ###   ########.fr       */
+/*   Updated: 2024/11/07 17:42:59 by sael-kha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int	i;
 	int	j;
 
-	if (!s1)
+	if (!s1 || !set)
 		return (NULL);
 	i = 0;
 	j = ft_strlen(s1) - 1;

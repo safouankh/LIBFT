@@ -6,7 +6,7 @@
 #    By: sael-kha <sael-kha@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/28 11:31:26 by sael-kha          #+#    #+#              #
-#    Updated: 2024/11/07 10:40:52 by sael-kha         ###   ########.fr        #
+#    Updated: 2024/11/08 11:32:44 by sael-kha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,18 +50,19 @@ CC = cc
 NAME = libft.a
 CFLAGS = -Wall -Wextra -Werror
 OBJ = $(SRC:.c=.o)
-BNS = $(gta:.c=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
 	ar rcs $(NAME) $(OBJ)
 
-bonus: fclean $(OBJ) $(BNS)
-	ar rcs $(NAME) $(OBJ) $(BNS)
+%.o: %.c libft.h
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	@rm -f *.o
+
 fclean: clean
 	@rm -f *.a
+
 re: fclean all

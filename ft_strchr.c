@@ -20,7 +20,7 @@ char	*ft_strchr(const char *s1, int s2)
 	i = 0;
 	str = (unsigned char *)s1;
 	if ((unsigned char)s2 == '0')
-		return ((char *)&str[0]);
+		return ((char *)s1);
 	while (str[i])
 	{
 		if (str[i] == (unsigned char)s2)
@@ -28,7 +28,7 @@ char	*ft_strchr(const char *s1, int s2)
 		i++;
 	}
 	if ((unsigned char)s2 == '\0')
-		return ((char *)&str[i]);
+		return ((char *)str + i);
 	return (NULL);
 }
 

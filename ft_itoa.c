@@ -48,13 +48,3 @@ char	*ft_itoa(int n)
 		str[0] = '-';
 	return (str);
 }
-/*
-#include <stdio.h>
-
-int main()
-{
-    int num = 13245;
-    char *test = ft_itoa(num);
-    printf(":%s:",test);
-}
-*/

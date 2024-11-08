@@ -15,12 +15,7 @@
 
 # include <stdlib.h>
 # include <unistd.h>
-
-typedef struct s_list
-{
-	void			*content;
-	struct s_list	*next;
-}					t_list;
+# include <limits.h>
 
 int		ft_toupper(int ch);
 int		ft_tolower(int ch);
@@ -59,6 +54,5 @@ void	ft_putendl_fd(char *s, int fd);
 char	**ar_str(char const *s, char c);
 char	*alloc_str(int len);
 int		count(char const *s, char sep);
-t_list	*ft_lstnew(void *content);
 
 #endif

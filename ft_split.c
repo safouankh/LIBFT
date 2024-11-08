@@ -64,6 +64,8 @@ char	**ft_split(char const *s, char c)
 	int		j;
 	char	**strsplit;
 
+	if (!s)
+		return (NULL);
 	j = 0;
 	strsplit = ar_str(s, c);
 	if (!strsplit)
@@ -83,38 +85,3 @@ char	**ft_split(char const *s, char c)
 	strsplit[j] = NULL;
 	return (strsplit);
 }
-/*
-char    ft_split(char const *s, char c)
-{
-    int        j;
-    int        len;
-    char    strsplit;
-
-    j = 0;
-    strsplit = split_shit(s, c);
-    if (!strsplit)
-        return NULL;
-    while (s)
-    {
-        len = 0;
-        if (s != c)
-        {
-            len = gta_strlen(s, c);
-            strsplit[j] = shit(len);
-            if (!ft_strncpy(strsplit[j], s, c))
-            {
-                while (--j >= 0)
-                    free(strsplit[j]);
-                free(strsplit);
-                return (NULL);
-            }
-            s += len;
-            j++;
-        }
-        else
-            s++;
-    }
-    strsplit[j] = NULL;
-    return (strsplit);
-}
-*/
