@@ -16,24 +16,17 @@ static size_t	count_words(const char *s, char c)
 {
 	size_t	counter;
 	int		i;
-	int		key;
 
 	counter = 0;
 	i = 0;
 	while (s[i])
 	{
-		key = 1;
 		while (s[i] && s[i] == c)
 			i++;
+		if (s[i] && s[i] != c)
+			counter++;
 		while (s[i] && s[i] != c)
-		{
-			if (key)
-			{
-				counter++;
-				key = 0;
-			}
 			i++;
-		}
 	}
 	return (counter);
 }
@@ -82,7 +75,7 @@ char	**ft_split(char const *s, char c)
 	size_t	num;
 	char	**res;
 
-	if (s == NULL)
+	if (!s)
 		return (NULL);
 	num = count_words(s, c);
 	res = malloc(sizeof(char *) * (num + 1));
