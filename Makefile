@@ -6,7 +6,7 @@
 #    By: sael-kha <sael-kha@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/28 11:31:26 by sael-kha          #+#    #+#              #
-#    Updated: 2024/11/08 11:32:44 by sael-kha         ###   ########.fr        #
+#    Updated: 2024/11/08 13:25:02 by sael-kha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,10 +41,9 @@ SRC = ft_atoi.c \
       ft_strtrim.c \
       ft_tolower.c \
       ft_toupper.c \
-	ft_strlcat.c \
+	  ft_strlcat.c \
       ft_strdup.c \
-      ft_striteri.c \
-      ft_split_helper.c
+      ft_striteri.c
 gta = ft_lstnew.c
 CC = cc
 NAME = libft.a

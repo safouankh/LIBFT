@@ -5,83 +5,88 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sael-kha <sael-kha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/21 21:52:23 by sael-kha          #+#    #+#             */
-/*   Updated: 2024/10/25 16:11:31 by sael-kha         ###   ########.fr       */
+/*   Created: 2024/11/08 13:19:10 by sael-kha          #+#    #+#             */
+/*   Updated: 2024/11/08 13:19:10 by sael-kha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	gta_strlen(const char *str, char sep)
+static size_t	count_words(const char *s, char c)
+{
+	size_t	counter;
+	int		i;
+	int		key;
+
+	counter = 0;
+	i = 0;
+	while (s[i])
+	{
+		key = 1;
+		while (s[i] && s[i] == c)
+			i++;
+		while (s[i] && s[i] != c)
+		{
+			if (key)
+			{
+				counter++;
+				key = 0;
+			}
+			i++;
+		}
+	}
+	return (counter);
+}
+
+static char	**ft_free(char **str)
 {
 	int	i;
 
 	i = 0;
-	if (!str)
-		return (0);
-	while (str[i] != '\0' && str[i] != sep)
-	{
-		i++;
-	}
-	return (i);
+	while (str[i])
+		free(str[i++]);
+	free(str);
+	return (NULL);
 }
 
-static char	*ft_strncpy(char *dest, const char *src, char sep)
+static char	**ft_setwords(char **res, const char *s, char c)
 {
-	int	i;
+	int		i;
+	int		j;
+	size_t	len;
 
 	i = 0;
-	if (!dest || !src)
-		return (NULL);
-	while (src[i] != '\0' && src[i] != sep)
+	j = 0;
+	while (s[i])
 	{
-		dest[i] = src[i];
-		i++;
+		len = 0;
+		while (s[i] && s[i] == c)
+			i++;
+		while (s[i + len] && s[i + len] != c)
+			len++;
+		if (len > 0)
+		{
+			res[j] = malloc(sizeof(char) * (len + 1));
+			if (!res[j])
+				return (ft_free(res));
+			ft_strlcpy(res[j++], s + i, len + 1);
+		}
+		i += len;
 	}
-	dest[i] = '\0';
-	return (dest);
-}
-
-static char	**process_word(const char *s, char c, char **strsplit, int *j)
-{
-	int	len;
-
-	len = gta_strlen(s, c);
-	strsplit[*j] = alloc_str(len);
-	if (!ft_strncpy(strsplit[*j], s, c))
-	{
-		while (--(*j) >= 0)
-			free(strsplit[*j]);
-		free(strsplit);
-		return (NULL);
-	}
-	(*j)++;
-	return (strsplit);
+	res[j] = NULL;
+	return (res);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	int		j;
-	char	**strsplit;
+	size_t	num;
+	char	**res;
 
-	if (!s)
+	if (s == NULL)
 		return (NULL);
-	j = 0;
-	strsplit = ar_str(s, c);
-	if (!strsplit)
+	num = count_words(s, c);
+	res = malloc(sizeof(char *) * (num + 1));
+	if (!res)
 		return (NULL);
-	while (*s)
-	{
-		if (*s != c)
-		{
-			strsplit = process_word(s, c, strsplit, &j);
-			if (!strsplit)
-				return (NULL);
-			s += gta_strlen(s, c);
-		}
-		else
-			s++;
-	}
-	strsplit[j] = NULL;
-	return (strsplit);
+	return (ft_setwords(res, s, c));
 }
