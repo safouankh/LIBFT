@@ -6,7 +6,7 @@
 /*   By: sael-kha <sael-kha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 21:51:20 by sael-kha          #+#    #+#             */
-/*   Updated: 2024/10/23 19:42:38 by sael-kha         ###   ########.fr       */
+/*   Updated: 2024/11/09 18:29:49 by sael-kha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 		}
 		dst[i] = '\0';
 	}
-	while (src[i])
-		i++;
+	i = ft_strlen(src);
 	return (i);
 }

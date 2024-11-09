@@ -16,8 +16,13 @@ void	*ft_memset(void *b, int c, size_t len)
 {
 	unsigned char	*p;
 
-	p = b;
+	p = (unsigned char *)b;
 	while (len--)
 		*p++ = (unsigned char)c;
 	return (b);
+}
+int main()
+{
+	char str[] = "hello world";
+	printf("%s",ft_memset(str,'a',11));
 }
