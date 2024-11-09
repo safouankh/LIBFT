@@ -12,24 +12,11 @@
 
 #include "libft.h"
 
-static int	handeling(int sign)
-{
-	if (sign == 1)
-	{
-		return (INT_MAX);
-	}
-	else
-	{
-		return (INT_MIN);
-	}
-}
-
 int	ft_atoi(const char *str)
 {
-	int	i;
-	int	sign;
-	int	result;
-	int	degit;
+	int				i;
+	int				sign;
+	unsigned long	result;
 
 	i = 0;
 	sign = 1;
@@ -44,11 +31,11 @@ int	ft_atoi(const char *str)
 	}
 	while (str[i] >= '0' && str[i] <= '9')
 	{
-		degit = str[i] - '0';
-		if (result > (INT_MAX - degit) / 10)
-			return (handeling(sign));
-		result = result * 10 + (str[i] - '0');
-		i++;
+		result = result * 10 + (str[i++] - '0');
+		if (result > LONG_MAX && sign == 1)
+			return (-1);
+		if (result > (unsigned long)LONG_MAX + 1 && sign == -1)
+			return (0);
 	}
 	return (result * sign);
 }

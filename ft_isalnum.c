@@ -12,9 +12,9 @@
 
 int	ft_isalnum(int ch)
 {
-	char	un_ch;
+	unsigned char	un_ch;
 
-	un_ch = (char)ch;
+	un_ch = (unsigned char)ch;
 	if ((un_ch >= 97 && un_ch <= 122) || (un_ch >= 65 && un_ch <= 90)
 		|| (un_ch >= 48 && un_ch <= 57))
 		return (1);

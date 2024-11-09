@@ -12,18 +12,18 @@
 
 #include "libft.h"
 
-char	*cpy_shit(char *substr, unsigned int start, char const *s, size_t len)
+static char	*cpy_shit(char *sub, unsigned int start, char const *s, size_t len)
 {
 	size_t	i;
 
 	i = 0;
 	while (s[start + i] != '\0' && i < len)
 	{
-		substr[i] = s[start + i];
+		sub[i] = s[start + i];
 		i++;
 	}
-	substr[i] = '\0';
-	return (substr);
+	sub[i] = '\0';
+	return (sub);
 }
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
