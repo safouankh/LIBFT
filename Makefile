@@ -11,15 +11,15 @@ OBJ = $(SRC:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	ar rs $(NAME) $(OBJ)
+	ar rcs $(NAME) $(OBJ)
 
 %.o: %.c libft.h
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f *.o
+	rm -f $(OBJ)
 
 fclean: clean
-	rm -f *.a
+	rm -f $(NAME)
 
 re: fclean all

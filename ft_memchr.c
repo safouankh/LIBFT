@@ -29,23 +29,3 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	return (0);
 }
-
-/*
-#include <stdio.h>
-#include <string.h>
-
-int main() {
-   const char str[] = "Welcome to India";
-   const char ch = 't';
-
-   char* result = (char*)ft_memchr(str, ch, strlen(str));
-
-   if (result != NULL) {
-       printf("'%c' found at position %ld\n", ch, result - str);
-   } else {
-       printf("'%c' not found in the string\n", ch);
-   }
-   
-   return 0;
-}
-*/
